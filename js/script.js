@@ -51,6 +51,8 @@ $(document).ready(
           };
           studenti.push(studenteInserito);
           // console.log(studenti);
+          $('.listaStudenti').text('');
+          listaAggiornata(studenti, template);
       }
     );
 
@@ -58,14 +60,7 @@ $(document).ready(
     var source = $('#studente').html();
     var template = Handlebars.compile(source);
 
-    var studente = {
-      nome: "Corrado",
-      cognome: "Caruso",
-      eta: 35
-    };
-    var html = template(studente);
-    $('.container').append(html);
-
+    listaAggiornata(studenti, template);
 
   }
 );
